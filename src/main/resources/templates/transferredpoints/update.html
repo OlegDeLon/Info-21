@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Update Transferred Points</h1>
+<form th:action="@{/transferredpoints/update/{id}(id=${transferredPoint.id})}" method="post">
+  <label for="checkingPeer">Checking Peer:</label><br>
+  <input type="text" id="checkingPeer" name="checkingPeer" th:value="${transferredPoint.checkingPeer}"><br>
+  <label for="checkedPeer">Checked Peer:</label><br>
+  <input type="text" id="checkedPeer" name="checkedPeer" th:value="${transferredPoint.checkedPeer}"><br>
+  <label for="pointsAmount">Points Amount:</label><br>
+  <input type="number" id="pointsAmount" name="pointsAmount" th:value="${transferredPoint.pointsAmount}"><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

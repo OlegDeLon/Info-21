@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Add Transferred Points</h1>
+<form th:action="@{/transferredpoints}" method="post">
+  <label for="checkingPeer">Checking Peer:</label><br>
+  <input type="text" id="checkingPeer" name="checkingPeer"><br>
+  <label for="checkedPeer">Checked Peer:</label><br>
+  <input type="text" id="checkedPeer" name="checkedPeer"><br>
+  <label for="pointsAmount">Points Amount:</label><br>
+  <input type="number" id="pointsAmount" name="pointsAmount"><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>

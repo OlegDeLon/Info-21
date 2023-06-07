@@ -1,0 +1,34 @@
+<div class="container">
+  <h1>Transferred Points</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Checking Peer</th>
+      <th>Checked Peer</th>
+      <th>Points Amount</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="transferredPoint : ${transferredPoints}">
+      <td th:text="${transferredPoint.id}"></td>
+      <td th:text="${transferredPoint.checkingPeer}"></td>
+      <td th:text="${transferredPoint.checkedPeer}"></td>
+      <td th:text="${transferredPoint.pointsAmount}"></td>
+      <td>
+        <form action="@{/transferredpoints/update/{id}(id=${transferredPoint.id})}" method="get" style="display: inline">
+          <input type="submit" value="Update" class="btn btn-primary">
+        </form>
+        <form th:action="@{/transferredpoints/delete/{id}(id=${transferredPoint.id})}" method="post" style="display: inline">
+          <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <form action="/transferredpoints/add" method="get" style="display: inline">
+    <input type="submit" value="Add New" class="btn btn-primary">
+  </form>
+</div>
